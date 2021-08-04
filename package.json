@@ -10,7 +10,7 @@
   "author": "David Polania Mejia <davidpolme3@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.1.0"
   },
   "dependencies": {
     "fast-levenshtein": "^2.0.6"
