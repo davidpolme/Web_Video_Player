@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Prototype</title>
-</head>
-
-<body>
-    <h1>Prototype</h1>
-    <footer><a href="./Ejercicios.html">Volver</a></footer>
-
-    <script>
-        //Un objeto comun y corriente
-        /*
+//Un objeto comun y corriente
+/*
         const zelda = {
             name: "Zelda"
         }
@@ -32,8 +17,8 @@
         }
         link.saludar();
         */
-        //Seamos un poco mas eficientes
-        /*function Hero(name) {
+//Seamos un poco mas eficientes
+/*function Hero(name) {
             const hero = {
                 name: name
             }
@@ -50,8 +35,8 @@
         link.saludar();
         */
 
-        //Aun podemos mejorar mas y evitar tener que crear la misma funcion cada vez
-        /*
+//Aun podemos mejorar mas y evitar tener que crear la misma funcion cada vez
+/*
         const heroMethods = {
             saludar: function () {
                 console.log(`Me llamo ${this.name}`)
@@ -73,9 +58,9 @@
         link.saludar();
         */
 
-        // Object.create
-        // const nuevoObjeto = Object.create(objeto)
-        /*
+// Object.create
+// const nuevoObjeto = Object.create(objeto)
+/*
         const heroMethods = {
             saludar: function () {
                 console.log(`Soy ${this.name}`)
@@ -95,15 +80,15 @@
         link.saludar();
         */
 
-        // Los metodos de Hero dentro de Hero
+// Los metodos de Hero dentro de Hero
 
-        // Si es algo que le pertenece a Hero, lo debemos poner dentro de Hero
-        // const heroMethods = {
-        //     saludar: function () {
-        //         console.log(`Soy ${this.name}`)
-        //     },
-        // }
-        /*
+// Si es algo que le pertenece a Hero, lo debemos poner dentro de Hero
+// const heroMethods = {
+//     saludar: function () {
+//         console.log(`Soy ${this.name}`)
+//     },
+// }
+/*
                 function Hero(name) {
                     const hero = Object.create(Hero.prototype)
                     hero.name = name
@@ -121,32 +106,27 @@
                 const link = Hero("Link")
                 link.saludar();
         */
-        // new es un atajo (Azucar sintactica) para llevar hero.prototype al objeto
-        function Hero(name) {
-            // Al usar new, esto ocurre automaticamente
-            // Siempre lo va a sacar del prototype del constructor
-                    // const hero = Object.create(Hero.prototype)
-                    // Sirve imaginarnos que va a ser guardado en this
-                    // this = Object.create(Hero.prototype)
-                    // Por lo tanto...
-                    // hero.name = name
-                    // ...Se convierte en:
-                    this.name = name
-                    // El return ocurre implicitamente, no es necesario hacerlo
-                    // return hero 
-                }
+// new es un atajo (Azucar sintactica) para llevar hero.prototype al objeto
+function Hero(name) {
+  // Al usar new, esto ocurre automaticamente
+  // Siempre lo va a sacar del prototype del constructor
+  // const hero = Object.create(Hero.prototype)
+  // Sirve imaginarnos que va a ser guardado en this
+  // this = Object.create(Hero.prototype)
+  // Por lo tanto...
+  // hero.name = name
+  // ...Se convierte en:
+  this.name = name;
+  // El return ocurre implicitamente, no es necesario hacerlo
+  // return hero
+}
 
-                Hero.prototype.saludar = function () {
-                    console.log(`New Hero ${this.name}`)
-                }
-                
+Hero.prototype.saludar = function () {
+  console.log(`New Hero ${this.name}`);
+};
 
-                const zelda = new Hero("Zelda")
-                zelda.saludar();
+const zelda = new Hero("Zelda");
+zelda.saludar();
 
-                const link = new Hero("Link")
-                link.saludar();
-    </script>
-</body>
-
-</html>
+const link = new Hero("Link");
+link.saludar();
