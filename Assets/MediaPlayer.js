@@ -20,17 +20,12 @@
             plugin.run(this)
         })
     }
- 
-
-
     MediaPlayer.prototype.play = function () {
         this.media.play()
     }
-
     MediaPlayer.prototype.pause = function () {
         this.media.pause()
     }
-
     MediaPlayer.prototype.togglePlay = function () {
         if (this.media.paused) {
             this.play()
@@ -50,4 +45,5 @@
     MediaPlayer.prototype.loudVolume = function () {
         this.media.volume = 1;
     }
+
     export default MediaPlayer
